@@ -1,0 +1,19 @@
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\bin\Debug\CarMenu.exe.config
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\bin\Debug\CarMenu.exe
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\bin\Debug\CarMenu.pdb
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\obj\Debug\CarMenu.csprojAssemblyReference.cache
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\obj\Debug\CarMenu.Properties.Resources.resources
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\obj\Debug\CarMenu.csproj.GenerateResource.cache
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\obj\Debug\CarMenu.csproj.CoreCompileInputs.cache
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\obj\Debug\CarMenu.exe
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\obj\Debug\CarMenu.pdb
+C:\Users\Mindaugas\source\repos\CarMenu\CarMenu\obj\Debug\CarMenu.Form1.resources
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\bin\Debug\CarMenu.exe.config
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\bin\Debug\CarMenu.exe
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\bin\Debug\CarMenu.pdb
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\obj\Debug\CarMenu.csprojResolveAssemblyReference.cache
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\obj\Debug\CarMenu.Form1.resources
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\obj\Debug\CarMenu.Properties.Resources.resources
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\obj\Debug\CarMenu.csproj.GenerateResource.Cache
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\obj\Debug\CarMenu.exe
+C:\Users\Vaidotas\Documents\Visual Studio 2017\Projects\CarMenu\CarMenu\obj\Debug\CarMenu.pdb

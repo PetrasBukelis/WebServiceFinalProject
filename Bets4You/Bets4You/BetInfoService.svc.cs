@@ -24,6 +24,13 @@ namespace Bets4You
             return result;
         }
 
+        public string AddBets(int id, string betName, string category)
+        {
+            Bets b = new Bets(id, betName, category, Convert.ToDateTime("2019-12-01"), 0.0, null);
+            result = "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Coefficient: " + b.Coefficient + "; Date: " + b.Date + "; SubmitOrName: " + b.SubmitOrName + ";";
+            return result;
+        }
+
         public void FillData()
         {
             try

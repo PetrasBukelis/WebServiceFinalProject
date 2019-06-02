@@ -4,3 +4,9 @@ c:\users\vaidotas\documents\visual studio 2017\Projects\Bets4You\Bets4You\bin\Be
 c:\users\vaidotas\documents\visual studio 2017\Projects\Bets4You\Bets4You\obj\Debug\Bets4You.csprojResolveAssemblyReference.cache
 c:\users\vaidotas\documents\visual studio 2017\Projects\Bets4You\Bets4You\obj\Debug\Bets4You.dll
 c:\users\vaidotas\documents\visual studio 2017\Projects\Bets4You\Bets4You\obj\Debug\Bets4You.pdb
+E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\bin\Bets4You.dll.config
+E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\bin\Bets4You.dll
+E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\bin\Bets4You.pdb
+E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.csprojResolveAssemblyReference.cache
+E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.dll
+E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.pdb

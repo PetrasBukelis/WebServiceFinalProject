@@ -42,6 +42,29 @@ namespace Bets4You
             else
                 return "Password incorrect";
         }
+        public string BestCoff()
+        {
+            UpdateList(coefficients);
+           foreach(ComboCoef combo in coefficients)
+            {
+                int rez = 0;
+                
+            }
+        }
+        private List<ComboCoef> UpdateList(List<ComboCoef> comboCoefs)
+        {
+            foreach(ComboCoef combo in comboCoefs)
+            {
+                foreach(int b in combo.BetIndex)
+                {
+                    if("list.getpagalindex.date" < DateTime.Today)
+                    {
+                        comboCoefs.Remove(List.getpagalindex);
+                    }
+                }
+            }
+            return comboCoefs;
+        }
 
         public string SubmitCoff(int bet1, int bet2, int bet3, int bet4, int bet5, string submitorName, string password)
         {
@@ -69,6 +92,7 @@ namespace Bets4You
                 return "Password incorrect";
 
         }
+
 
         public void InsertData(string betName, string category, DateTime date, int coefficient, string submitorName)
         {

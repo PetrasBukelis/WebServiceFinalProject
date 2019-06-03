@@ -45,10 +45,10 @@ namespace Bets4You
 
         public string BestCoff()
         {
-           //UpToDate();
-           ComboCoef result = new ComboCoef(null,0,null);
-           int maxcof = 0;
-           foreach(ComboCoef combo in coefficients)
+            //UpToDate();
+            ComboCoef result = new ComboCoef(null,0,null);
+            int maxcof = 0;
+            foreach(ComboCoef combo in coefficients)
             {
                 if(combo.SumCoeff > maxcof)
                 {

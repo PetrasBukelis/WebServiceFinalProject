@@ -80,6 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>betsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ComboCoef.cs" />
     <Compile Include="IBetInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

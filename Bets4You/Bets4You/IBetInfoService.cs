@@ -22,5 +22,6 @@ namespace Bets4You
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         string SubmitCoff(int bet1, int bet2, int bet3, int bet4, int bet5, string submitorName, string password);
+
     }
 }

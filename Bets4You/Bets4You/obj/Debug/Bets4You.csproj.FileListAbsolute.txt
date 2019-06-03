@@ -10,3 +10,9 @@ E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\bin\Bets4You.pdb
 E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.csprojResolveAssemblyReference.cache
 E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.dll
 E:\Programavimas\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.pdb
+C:\Users\bukel\Documents\GitHub\WebServiceFinalProject\Bets4You\Bets4You\bin\Bets4You.dll
+C:\Users\bukel\Documents\GitHub\WebServiceFinalProject\Bets4You\Bets4You\bin\Bets4You.pdb
+C:\Users\bukel\Documents\GitHub\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.csprojAssemblyReference.cache
+C:\Users\bukel\Documents\GitHub\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.csproj.CoreCompileInputs.cache
+C:\Users\bukel\Documents\GitHub\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.dll
+C:\Users\bukel\Documents\GitHub\WebServiceFinalProject\Bets4You\Bets4You\obj\Debug\Bets4You.pdb

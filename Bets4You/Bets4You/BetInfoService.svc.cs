@@ -19,6 +19,7 @@ namespace Bets4You
         {
             bets.Clear();
             FillData();
+            UpToDate();
             foreach(Bets b in bets)
             {
                 result += "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Date: " + b.Date + "; Coefficient (%): " + b.Coefficient + "; SubmitorName: " + b.SubmitorName + ";";
@@ -44,19 +45,20 @@ namespace Bets4You
         }
         public string BestCoff()
         {
-           UpToDate();
-            ComboCoef result = new ComboCoef(null,0,null);
+
+            string subname = "";
             int maxcof = 0;
            foreach(ComboCoef combo in coefficients)
             {
                 if(combo.SumCoeff > maxcof)
                 {
                     maxcof += combo.SumCoeff;
-                    result = combo;
+                    subname = combo.SubmitorName;
                 }
             }
-            return result.SubmitorName + " " + result.SumCoeff;
+            return subname + " " + maxcof;
         }
+
         private void UpToDate()
         {
             foreach(ComboCoef combo in coefficients)

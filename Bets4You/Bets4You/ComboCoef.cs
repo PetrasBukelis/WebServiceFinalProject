@@ -7,18 +7,18 @@ namespace Bets4You
 {
     public class ComboCoef
     {
-        private List<int> BetIndexes;
-        private double SumCoef;
+        private List<int> betIndexes;
+        private double sumCoef;
         private string submitorName;
 
         public ComboCoef(List<int> betindex, double sumcoef, string submitorName)
         {
-            this.BetIndexes = betindex;
-            this.SumCoef = sumcoef;
+            this.betIndexes = betindex;
+            this.sumCoef = sumcoef;
             this.submitorName = submitorName;
         }
-        public List<int> BetIndex { get => BetIndexes; set => BetIndexes = value; }
-        public double SumCoeff { get => SumCoef; set => SumCoef = value; }
+        public List<int> BetIndex { get => betIndexes; set => betIndexes = value; }
+        public double SumCoeff { get => sumCoef; set => sumCoef = value; }
         public string SubmitorName { get => submitorName; set => submitorName = value; }
     }
 }

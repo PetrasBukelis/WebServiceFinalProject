@@ -26,11 +26,11 @@ namespace Bets4You
             return result;
         }
 
-        public string AddBets(string betName, string category, int coefficient, string submitorName, string password)
+        public string AddBets(string betName, string category, int coefficient, string submitorName, string password, DateTime date)
         {
+            bets.Clear();
             if (password == "PasswordSubmit")
             {
-                DateTime date = DateTime.Today;
                 InsertData(betName, category, date, coefficient, submitorName);
                 FillData();
                 foreach (Bets b in bets)
@@ -70,7 +70,7 @@ namespace Bets4You
         {
             if (password == "PasswordSubmit")
             {
-                double combocoef = 1;
+                int combocoef = 1;
                 foreach (Bets b in bets)
                 {
                     if (b.Id == bet1 || b.Id == bet2 || b.Id == bet3 || b.Id == bet4 || b.Id == bet5)

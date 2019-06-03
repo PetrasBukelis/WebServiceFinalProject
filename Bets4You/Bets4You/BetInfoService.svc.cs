@@ -42,11 +42,12 @@ namespace Bets4You
             else
                 return "Password incorrect";
         }
+
         public string BestCoff()
         {
-           UpToDate();
-            ComboCoef result = new ComboCoef(null,0,null);
-            int maxcof = 0;
+           //UpToDate();
+           ComboCoef result = new ComboCoef(null,0,null);
+           int maxcof = 0;
            foreach(ComboCoef combo in coefficients)
             {
                 if(combo.SumCoeff > maxcof)
@@ -57,6 +58,7 @@ namespace Bets4You
             }
             return result.SubmitorName + " " + result.SumCoeff;
         }
+
         private void UpToDate()
         {
             foreach(ComboCoef combo in coefficients)

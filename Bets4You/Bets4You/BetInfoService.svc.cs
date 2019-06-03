@@ -44,26 +44,33 @@ namespace Bets4You
         }
         public string BestCoff()
         {
-            UpdateList(coefficients);
+           UpToDate();
+            ComboCoef result = new ComboCoef(null,0,null);
+            int maxcof = 0;
            foreach(ComboCoef combo in coefficients)
             {
-                int rez = 0;
-                
+                if(combo.SumCoeff > maxcof)
+                {
+                    maxcof += combo.SumCoeff;
+                    result = combo;
+                }
             }
+            return result.SubmitorName + " " + result.SumCoeff;
         }
-        private List<ComboCoef> UpdateList(List<ComboCoef> comboCoefs)
+        private void UpToDate()
         {
-            foreach(ComboCoef combo in comboCoefs)
+            foreach(ComboCoef combo in coefficients)
             {
                 foreach(int b in combo.BetIndex)
                 {
-                    if("list.getpagalindex.date" < DateTime.Today)
+                    if(bets[b].Date < DateTime.Today)
                     {
-                        comboCoefs.Remove(List.getpagalindex);
+                        bets.Remove(bets[b]);
+                        coefficients.Remove(combo);
+                        break;
                     }
                 }
             }
-            return comboCoefs;
         }
 
         public string SubmitCoff(int bet1, int bet2, int bet3, int bet4, int bet5, string submitorName, string password)

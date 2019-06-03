@@ -43,20 +43,35 @@ namespace Bets4You
                 return "Password incorrect";
         }
 
+        public string AllCoff()
+        {
+            string temp = "";
+            foreach(ComboCoef combo in coefficients)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach(int c in combo.BetIndex)
+                {
+                    sb.Append(c + ",");
+                }
+                temp += "Index of bets: " + sb + " Submitor: " + combo.SubmitorName + " Coefficient: " + combo.SumCoeff + "\n";
+            }
+            return temp;
+        }
+
         public string BestCoff()
         {
             //UpToDate();
-            ComboCoef result = new ComboCoef(null,0,null);
+            string submitname = "";
             int maxcof = 0;
             foreach(ComboCoef combo in coefficients)
             {
                 if(combo.SumCoeff > maxcof)
                 {
-                    maxcof += combo.SumCoeff;
-                    result = combo;
+                    maxcof = combo.SumCoeff;
+                    submitname = combo.SubmitorName;
                 }
             }
-            return result.SubmitorName + " " + result.SumCoeff;
+            return submitname + " " + maxcof;
         }
 
         private void UpToDate()

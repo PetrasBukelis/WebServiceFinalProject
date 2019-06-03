@@ -19,32 +19,32 @@ namespace Bets4You
             FillData();
             foreach(Bets b in bets)
             {
-                result += "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Coefficient: " + b.Coefficient + "; Date: " + b.Date + "; SubmitOrName: " + b.SubmitOrName + ";";
+                result += "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Date: " + b.Date + "; Coefficient (%): " + b.Coefficient + "; SubmitorName: " + b.SubmitorName + ";";
             }
             return result;
         }
 
-        public string AddBets(int id, string betName, string category,double coefficient,string submitorname)
+        public string AddBets(string betName, string category, int coefficient, string submitorName)
         {
             DateTime date = DateTime.Today;
-            InsertData(id, betName, category, coefficient, date.ToString(), submitorname);
-            result = "Id: " + id + "; BetName: " + betName + "; Category: " + category + "; Coefficient: " + coefficient + "; Date: " + date + "; SubmitOrName: " + submitorname + ";";
+            InsertData(betName, category, date, coefficient, submitorName);
+            FillData();
+            foreach (Bets b in bets)
+            {
+                result += "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Date: " + b.Date + "; Coefficient (%): " + b.Coefficient + "; SubmitorName: " + b.SubmitorName + ";";
+            }
             return result;
         }
 
 
-        public void InsertData(int id, string BetName,string Category,double Coefficient,string date, string submitorname)
+        public void InsertData(string betName, string category, DateTime date, int coefficient, string submitorName)
         {
-
             string connString = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
             SqlCommand command = conn.CreateCommand();
-            string idstring = id.ToString();
-            string coefficient = Coefficient.ToString();
             command.CommandType = System.Data.CommandType.Text;
-            command.CommandText = "Insert into Bets (BetName,Category,date,coefficient,submitorname) values" +
-                " ("+ BetName + ", " + Category + ", " + date + ", " + coefficient + ", " + submitorname+")";
+            command.CommandText = "insert into Bets (BetName, Category, Date, Coefficient, SubmitorName) values ('"+ betName + "', '" + category + "', '" + date + "', '" + coefficient + "', '" + submitorName + "')";
             command.ExecuteNonQuery();
             conn.Close();
         }
@@ -62,7 +62,7 @@ namespace Bets4You
                 SqlDataReader rd = command.ExecuteReader();
                 while (rd.Read())
                 {
-                    Bets bet = new Bets(Convert.ToInt32(rd[0].ToString().TrimEnd()), rd[1].ToString().TrimEnd(), rd[2].ToString().TrimEnd(), Convert.ToDateTime(rd[3].ToString().TrimEnd()), Convert.ToDouble(rd[4].ToString().TrimEnd()), rd[5].ToString().TrimEnd());
+                    Bets bet = new Bets(Convert.ToInt32(rd["Id"].ToString().TrimEnd()), rd["BetName"].ToString().TrimEnd(), rd["Category"].ToString().TrimEnd(), Convert.ToDateTime(rd["Date"].ToString().TrimEnd()), Convert.ToInt32(rd["Coefficient"].ToString().TrimEnd()), rd["SubmitorName"].ToString().TrimEnd());
                     bets.Add(bet);
                 }
                 conn.Close();

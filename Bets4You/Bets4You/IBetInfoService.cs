@@ -16,7 +16,7 @@ namespace Bets4You
         string AllBets();
 
         [OperationContract]
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
-        string AddBets(int id, string betName, string category, double coefficient, string submitorname);
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "AddBets?betName={betName}&category={category}&coefficient={coefficient}&submitorName={submitorName}")]
+        string AddBets(string betName, string category, int coefficient, string submitorName);
     }
 }

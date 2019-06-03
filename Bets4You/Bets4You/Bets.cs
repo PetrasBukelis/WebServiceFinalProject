@@ -11,23 +11,24 @@ namespace Bets4You
         private string betName;
         private string category;
         private DateTime date;
-        private double coefficient;
-        private string submitOrName;
+        private int coefficient;
+        private string submitorName;
 
-        public Bets(int id, string betName, string category, DateTime date, double coefficient, string submitOrName)
+        public Bets(int id, string betName, string category, DateTime date, int coefficient, string submitorName)
         {
-            this.BetName = betName;
+            this.id = id;
+            this.betName = betName;
             this.category = category;
             this.date = date;
             this.coefficient = coefficient;
-            this.submitOrName = submitOrName;
+            this.submitorName = submitorName;
         }
 
         public int Id { get => id; set => id = value; }
         public string BetName { get => betName; set => betName = value; }
         public string Category { get => category; set => category = value; }
         public DateTime Date { get => date; set => date = value; }
-        public double Coefficient { get => coefficient; set => coefficient = value; }
-        public string SubmitOrName { get => submitOrName; set => submitOrName = value; }
+        public int Coefficient { get => coefficient; set => coefficient = value; }
+        public string SubmitorName { get => submitorName; set => submitorName = value; }
     }
 }

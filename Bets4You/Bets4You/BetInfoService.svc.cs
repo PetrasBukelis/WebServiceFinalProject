@@ -24,11 +24,29 @@ namespace Bets4You
             return result;
         }
 
-        public string AddBets(int id, string betName, string category)
+        public string AddBets(int id, string betName, string category,double coefficient,string submitorname)
         {
-            Bets b = new Bets(id, betName, category, Convert.ToDateTime("2019-12-01"), 0.0, null);
-            result = "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Coefficient: " + b.Coefficient + "; Date: " + b.Date + "; SubmitOrName: " + b.SubmitOrName + ";";
+            DateTime date = DateTime.Today;
+            InsertData(id, betName, category, coefficient, date.ToString(), submitorname);
+            result = "Id: " + id + "; BetName: " + betName + "; Category: " + category + "; Coefficient: " + coefficient + "; Date: " + date + "; SubmitOrName: " + submitorname + ";";
             return result;
+        }
+
+
+        public void InsertData(int id, string BetName,string Category,double Coefficient,string date, string submitorname)
+        {
+
+            string connString = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+            SqlConnection conn = new SqlConnection(connString);
+            conn.Open();
+            SqlCommand command = conn.CreateCommand();
+            string idstring = id.ToString();
+            string coefficient = Coefficient.ToString();
+            command.CommandType = System.Data.CommandType.Text;
+            command.CommandText = "Insert into Bets (BetName,Category,date,coefficient,submitorname) values" +
+                " ("+ BetName + ", " + Category + ", " + date + ", " + coefficient + ", " + submitorname+")";
+            command.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void FillData()

@@ -24,12 +24,21 @@ namespace Bets4You
             {
                 result += "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Date: " + b.Date + "; Coefficient (%): " + b.Coefficient + "; SubmitorName: " + b.SubmitorName + ";";
             }
+            AddToLog("AllBets");
             return result + '\n';
         }
-
+        public void AddToLog(string Metodas)
+        {
+            using (System.IO.StreamWriter writer = new System.IO.StreamWriter("log.txt", true))
+            {
+                writer.WriteLine("Date: " + DateTime.Today + " Time: " + DateTime.Now.TimeOfDay + " Metodas: " + Metodas);
+            }
+        }
         public string AddBets(string betName, string category, int coefficient, string submitorName, string password, DateTime date)
         {
             bets.Clear();
+            AddToLog("AddBets");
+
             if (password == "PasswordSubmit")
             {
                 InsertData(betName, category, date, coefficient, submitorName);
@@ -47,6 +56,7 @@ namespace Bets4You
 
         public string AllCoff()
         {
+            AddToLog("AllCoff");
             string temp = "";
             foreach(ComboCoef combo in coefficients)
             {
@@ -61,6 +71,7 @@ namespace Bets4You
         }
         public string CalcBet(int betId, int money, string reg)
         {
+            AddToLog("CalcBet");
             string temp = "";
             foreach (Bets bet in bets)
             {
@@ -76,6 +87,7 @@ namespace Bets4You
         public string BestCoff()
         {
             //UpToDate();
+            AddToLog("BestCoff");
             string submitname = "";
             int maxcof = 0;
             foreach(ComboCoef combo in coefficients)
@@ -91,6 +103,7 @@ namespace Bets4You
 
         private void UpToDate()
         {
+
             foreach(ComboCoef combo in coefficients)
             {
                 foreach(int b in combo.BetIndex)
@@ -107,6 +120,7 @@ namespace Bets4You
 
         public string SubmitCoff(int bet1, int bet2, int bet3, int bet4, int bet5, string submitorName, string password)
         {
+            AddToLog("SubmitCoff");
             if (password == "PasswordSubmit")
             {
                 int combocoef = 1;
@@ -135,6 +149,7 @@ namespace Bets4You
 
         public void InsertData(string betName, string category, DateTime date, int coefficient, string submitorName)
         {
+            AddToLog("InsertData");
             string connString = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
@@ -147,6 +162,7 @@ namespace Bets4You
 
         public void FillData()
         {
+            AddToLog("FillData");
             try
             {
                 string connString = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;

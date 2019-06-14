@@ -8,6 +8,7 @@ using System.ServiceModel;
 using System.Globalization;
 using System.Text;
 using System.Web.UI.WebControls;
+using System.IO;
 namespace Bets4You
 {
     public class BetInfoService : IBetInfoService

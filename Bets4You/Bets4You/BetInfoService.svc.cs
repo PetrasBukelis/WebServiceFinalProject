@@ -5,8 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.Globalization;
 using System.Text;
-
+using System.Web.UI.WebControls;
 namespace Bets4You
 {
     public class BetInfoService : IBetInfoService
@@ -23,7 +24,7 @@ namespace Bets4You
             {
                 result += "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Date: " + b.Date + "; Coefficient (%): " + b.Coefficient + "; SubmitorName: " + b.SubmitorName + ";";
             }
-            return result;
+            return result + '\n';
         }
 
         public string AddBets(string betName, string category, int coefficient, string submitorName, string password, DateTime date)
@@ -42,6 +43,7 @@ namespace Bets4You
             else
                 return "Password incorrect";
         }
+       
 
         public string AllCoff()
         {
@@ -54,6 +56,19 @@ namespace Bets4You
                     sb.Append(c + ",");
                 }
                 temp += "Index of bets: " + sb + " Submitor: " + combo.SubmitorName + " Coefficient: " + combo.SumCoeff + "\n";
+            }
+            return temp;
+        }
+        public string CalcBet(int betId, int money, string reg)
+        {
+            string temp = "";
+            foreach (Bets bet in bets)
+            {
+                if(bet.Id == betId)
+                {
+                    RegionInfo regionInfo = new RegionInfo(reg);
+                    temp = "Index of bet: " + betId + " possible winning: " + bet.Coefficient*money/100 + " " + regionInfo.CurrencySymbol;
+                }
             }
             return temp;
         }
@@ -150,5 +165,6 @@ namespace Bets4You
             }
             catch (SqlException e) { e.ToString(); }
         }
+        
     }
 }

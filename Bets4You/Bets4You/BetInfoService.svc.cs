@@ -37,7 +37,7 @@ namespace Bets4You
                 foreach (Bets b in bets)
                 {
                     result += "Id: " + b.Id + "; BetName: " + b.BetName + "; Category: " + b.Category + "; Date: " + b.Date + "; Coefficient (%): " + b.Coefficient + "; SubmitorName: " + b.SubmitorName + ";";
-                }
+                } 
                 return result;
             }
             else

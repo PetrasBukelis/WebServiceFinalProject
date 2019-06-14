@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="connect-Web.config Connection String" description="connect Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bets.mdf;Integrated Security=True;Pooling=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bukel\\Documents\\GitHub\\WebServiceFinalProject\\Bets4You\\Bets4You\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='connect']/@connectionString" />
+  </parameter>
+</parameters>

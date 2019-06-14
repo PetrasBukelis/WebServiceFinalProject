@@ -1,5 +1,0 @@
-http://localhost:55157/BetInfoService.svc/AddBets?betName=nameis&category=tat&coefficient=2&submitorName=name&password=PasswordSubmit&date=1999-01-01
-
-http://localhost:55157/BetInfoService.svc/AllBets
-
-http://localhost:55157/BetInfoService.svc/SubmitCoff?bet1=1&bet2=10&bet3=6&bet4=8&bet5=9&submitorName=Vaidotas&password=PasswordSubmit

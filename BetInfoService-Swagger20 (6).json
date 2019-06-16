@@ -8,7 +8,7 @@
   "host": "www.example.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"
@@ -44,6 +44,39 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/IBetInfoService_AllBets_OutputMessage"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/CalcBet": {
+      "get": {
+        "summary": "CalcBet",
+        "tags": [
+          "IBetInfoService"
+        ],
+        "operationId": "CalcBetGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IBetInfoService_CalcBet_InputMessage"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/IBetInfoService_CalcBet_OutputMessage"
             },
             "headers": {}
           }
@@ -184,137 +217,24 @@
     }
   },
   "definitions": {
-    "tns_AllBets": {
-      "title": "tns_AllBets",
-      "description": "",
-      "type": "object"
-    },
-    "tns_AllBetsResponse": {
-      "title": "tns_AllBetsResponse",
-      "description": "",
-      "type": "object",
-      "properties": {
-        "AllBetsResult": {
-          "type": "string"
-        }
-      }
-    },
-    "tns_AddBets": {
-      "title": "tns_AddBets",
-      "description": "",
-      "type": "object",
-      "properties": {
-        "betName": {
-          "type": "string"
-        },
-        "category": {
-          "type": "string"
-        },
-        "coefficient": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "submitorName": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "date": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "tns_AddBetsResponse": {
-      "title": "tns_AddBetsResponse",
-      "description": "",
-      "type": "object",
-      "properties": {
-        "AddBetsResult": {
-          "type": "string"
-        }
-      }
-    },
-    "tns_SubmitCoff": {
-      "title": "tns_SubmitCoff",
-      "description": "",
-      "type": "object",
-      "properties": {
-        "bet1": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "bet2": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "bet3": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "bet4": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "bet5": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "submitorName": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        }
-      }
-    },
-    "tns_SubmitCoffResponse": {
-      "title": "tns_SubmitCoffResponse",
-      "description": "",
-      "type": "object",
-      "properties": {
-        "SubmitCoffResult": {
-          "type": "string"
-        }
-      }
-    },
-    "tns_BestCoff": {
-      "title": "tns_BestCoff",
-      "description": "",
-      "type": "object"
-    },
-    "tns_BestCoffResponse": {
-      "title": "tns_BestCoffResponse",
-      "description": "",
-      "type": "object",
-      "properties": {
-        "BestCoffResult": {
-          "type": "string"
-        }
-      }
-    },
-    "tns_AllCoff": {
-      "title": "tns_AllCoff",
-      "description": "",
-      "type": "object"
-    },
-    "tns_AllCoffResponse": {
-      "title": "tns_AllCoffResponse",
-      "description": "",
-      "type": "object",
-      "properties": {
-        "AllCoffResult": {
-          "type": "string"
-        }
-      }
-    },
-    "IBetInfoService_AddBets_InputMessage": {
-      "title": "IBetInfoService_AddBets_InputMessage",
+    "IBetInfoService_AllBets_OutputMessage": {
+      "title": "IBetInfoService_AllBets_OutputMessage",
       "type": "object",
       "properties": {
         "parameters": {
-          "$ref": "#/definitions/tns_AddBets"
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_CalcBet_OutputMessage": {
+      "title": "IBetInfoService_CalcBet_OutputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
         }
       },
       "required": [
@@ -326,91 +246,7 @@
       "type": "object",
       "properties": {
         "parameters": {
-          "$ref": "#/definitions/tns_AddBetsResponse"
-        }
-      },
-      "required": [
-        "parameters"
-      ]
-    },
-    "IBetInfoService_AllBets_InputMessage": {
-      "title": "IBetInfoService_AllBets_InputMessage",
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/tns_AllBets"
-        }
-      },
-      "required": [
-        "parameters"
-      ]
-    },
-    "IBetInfoService_AllBets_OutputMessage": {
-      "title": "IBetInfoService_AllBets_OutputMessage",
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/tns_AllBetsResponse"
-        }
-      },
-      "required": [
-        "parameters"
-      ]
-    },
-    "IBetInfoService_AllCoff_InputMessage": {
-      "title": "IBetInfoService_AllCoff_InputMessage",
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/tns_AllCoff"
-        }
-      },
-      "required": [
-        "parameters"
-      ]
-    },
-    "IBetInfoService_AllCoff_OutputMessage": {
-      "title": "IBetInfoService_AllCoff_OutputMessage",
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/tns_AllCoffResponse"
-        }
-      },
-      "required": [
-        "parameters"
-      ]
-    },
-    "IBetInfoService_BestCoff_InputMessage": {
-      "title": "IBetInfoService_BestCoff_InputMessage",
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/tns_BestCoff"
-        }
-      },
-      "required": [
-        "parameters"
-      ]
-    },
-    "IBetInfoService_BestCoff_OutputMessage": {
-      "title": "IBetInfoService_BestCoff_OutputMessage",
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/tns_BestCoffResponse"
-        }
-      },
-      "required": [
-        "parameters"
-      ]
-    },
-    "IBetInfoService_SubmitCoff_InputMessage": {
-      "title": "IBetInfoService_SubmitCoff_InputMessage",
-      "type": "object",
-      "properties": {
-        "parameters": {
-          "$ref": "#/definitions/tns_SubmitCoff"
+          "type": "string"
         }
       },
       "required": [
@@ -422,7 +258,103 @@
       "type": "object",
       "properties": {
         "parameters": {
-          "$ref": "#/definitions/tns_SubmitCoffResponse"
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_BestCoff_OutputMessage": {
+      "title": "IBetInfoService_BestCoff_OutputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_AllCoff_OutputMessage": {
+      "title": "IBetInfoService_AllCoff_OutputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_AllBets_InputMessage": {
+      "title": "IBetInfoService_AllBets_InputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_CalcBet_InputMessage": {
+      "title": "IBetInfoService_CalcBet_InputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_AddBets_InputMessage": {
+      "title": "IBetInfoService_AddBets_InputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_SubmitCoff_InputMessage": {
+      "title": "IBetInfoService_SubmitCoff_InputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_BestCoff_InputMessage": {
+      "title": "IBetInfoService_BestCoff_InputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "parameters"
+      ]
+    },
+    "IBetInfoService_AllCoff_InputMessage": {
+      "title": "IBetInfoService_AllCoff_InputMessage",
+      "type": "object",
+      "properties": {
+        "parameters": {
+          "type": "string"
         }
       },
       "required": [

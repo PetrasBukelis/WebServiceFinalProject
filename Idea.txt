@@ -1,2 +1,2 @@
 Bets4You is webservice which suggests best bets and lets other privilaged people,
-submit their bets.
+submit their bets
